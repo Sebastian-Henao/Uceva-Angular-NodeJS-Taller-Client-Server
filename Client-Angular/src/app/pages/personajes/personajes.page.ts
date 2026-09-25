@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { ProductsTableComponent } from '../../components/products-table/products-table.component';
 import { AlertComponent } from '../../components/alert/alert.component';
 import { Personaje } from '../../interfaces/personajes.interface';
 import { PersonajesService } from '../../services/personajes/personajes.service';
 import { State } from '../../interfaces/state.interface'
+import { PersonajesTableComponent } from '../../components/personajes-table/personajes-table.component';
 
 @Component({
   selector: 'app-personajes',
-  imports: [ProductsTableComponent, AlertComponent],
+  imports: [PersonajesTableComponent, AlertComponent],
   templateUrl: './personajes.page.html',
 })
 export class PersonajesPage {
