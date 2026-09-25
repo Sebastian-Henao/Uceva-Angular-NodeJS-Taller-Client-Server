@@ -5,7 +5,7 @@ export class PersonajesRoutes {
     static get routes(): Router {
         const router = Router();
         const controller = new PersonajesController();
-        router.get("/:countPersonajes", controller.getAllPersinajes);
+        router.get("/:countPersonajes", controller.getAllPersonajes);
         return router;
     }
 }

@@ -4,7 +4,7 @@ import { PersonajesService } from "./personajes.service";
 
 export class PersonajesController {
     private readonly personajesService = new PersonajesService();
-    getAllPersinajes = (req: Request, res: Response): void => {
+    getAllPersonajes = (req: Request, res: Response): void => {
         const { countPersonajes } = req.params;
 
         setTimeout(() => {
