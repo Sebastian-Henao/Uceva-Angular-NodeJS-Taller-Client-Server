@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Midlaner } from '../../interfaces/midlaner.interface';
 
+/** Presenta los campeones midlane recibidos desde un componente contenedor. */
 @Component({
   selector: 'app-midlaners-table',
   imports: [],
