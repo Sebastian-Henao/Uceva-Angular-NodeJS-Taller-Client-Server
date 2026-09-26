@@ -11,12 +11,15 @@ import { Midlaner, MIDLANERS_BASE_DATA } from "../../../domain/interfaces/midlan
 export class MidlanersService {
 
     /**
-     * Obtiene el listado completo de los 20 midlaners con sus estadísticas generadas.
+     * Obtiene una cantidad determinada de midlaners con sus estadísticas generadas.
      * 
+     * @param countMidlaners Número de campeones a devolver.
      * @returns Promesa que resuelve un arreglo de midlaners
      */
-    public async getAllMidlaners(): Promise<Midlaner[]> {
-        const midlaners: Midlaner[] = MIDLANERS_BASE_DATA.map(baseData => {
+    public async getAllMidlaners(countMidlaners: number): Promise<Midlaner[]> {
+        const limitedMidlaners = MIDLANERS_BASE_DATA.slice(0, countMidlaners);
+
+        const midlaners: Midlaner[] = limitedMidlaners.map(baseData => {
             return {
                 ...baseData,
                 // Generamos porcentajes aleatorios realistas con faker

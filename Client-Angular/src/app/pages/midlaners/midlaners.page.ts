@@ -34,7 +34,7 @@ export class MidlanersPage {
    */
   ngOnInit(): void {
     this.state = 'loading';
-    this.midlanersService.getAllMidlaners().subscribe({
+    this.midlanersService.getAllMidlaners(20).subscribe({
       next: (midlaners) => {
         this.midlaners = midlaners;
         this.state = 'success';

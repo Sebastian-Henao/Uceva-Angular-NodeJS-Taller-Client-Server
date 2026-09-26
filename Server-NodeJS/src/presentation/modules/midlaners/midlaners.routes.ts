@@ -8,12 +8,21 @@ export class MidlanersRoutes {
 
         /**
          * @openapi
-         * /api/midlaners:
+         * /api/midlaners/{countMidlaners}:
          *   get:
-         *     summary: Obtener los 20 campeones de la línea central
-         *     description: Retorna los campeones midlane con sus datos base y estadísticas variables.
+         *     summary: Obtener listado de champions midlane
+         *     description: Retorna la cantidad de campeones solicitada en la ruta con datos base y estadísticas variables.
          *     tags:
          *       - Midlaners
+         *     parameters:
+         *       - in: path
+         *         name: countMidlaners
+         *         required: true
+         *         schema:
+         *           type: integer
+         *           minimum: 1
+         *           example: 10
+         *         description: Cantidad de midlaners a generar
          *     responses:
          *       200:
          *         description: Lista de campeones midlane
@@ -23,10 +32,12 @@ export class MidlanersRoutes {
          *               type: array
          *               items:
          *                 $ref: '#/components/schemas/Midlaner'
+         *       400:
+         *         description: Parámetro inválido
          *       500:
          *         description: Error interno del servidor
          */
-        router.get("/", controller.getAllMidlaners);
+        router.get("/:countMidlaners", controller.getAllMidlaners);
 
         return router;
     }
