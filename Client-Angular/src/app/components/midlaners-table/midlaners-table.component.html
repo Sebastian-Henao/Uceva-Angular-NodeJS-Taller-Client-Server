@@ -1,1 +1,32 @@
-<p>midlaners-table works!</p>
+<div class="table-responsive">
+	<table class="table table-striped border">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Título</th>
+				<th scope="col">Clase</th>
+				<th scope="col">Región</th>
+				<th scope="col">Dificultad</th>
+				<th scope="col">Winrate</th>
+				<th scope="col">Pickrate</th>
+				<th scope="col">Banrate</th>
+			</tr>
+		</thead>
+		<tbody>
+			@for (midlaner of midlaners; track midlaner.id) {
+				<tr>
+					<th scope="row">{{ midlaner.id }}</th>
+					<td>{{ midlaner.nombre }}</td>
+					<td>{{ midlaner.titulo }}</td>
+					<td>{{ midlaner.clase }}</td>
+					<td>{{ midlaner.region }}</td>
+					<td>{{ midlaner.dificultad }}</td>
+					<td>{{ midlaner.winrate }}%</td>
+					<td>{{ midlaner.pickrate }}%</td>
+					<td>{{ midlaner.banrate }}%</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
