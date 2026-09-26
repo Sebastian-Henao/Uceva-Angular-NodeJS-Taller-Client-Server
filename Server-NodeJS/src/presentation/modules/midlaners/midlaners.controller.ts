@@ -14,7 +14,7 @@ export class MidlanersController {
     }
 
     /**
-     * Maneja la petición GET para obtener todos los midlaners.
+     * Maneja la petición GET para obtener una cantidad determinada de midlaners.
      * Invoca al servicio que junta los datos estáticos con faker.
      * 
      * @param req Petición Express
@@ -23,7 +23,15 @@ export class MidlanersController {
      */
     public getAllMidlaners = async (req: Request, res: Response): Promise<void> => {
         try {
-            const midlaners = await this.service.getAllMidlaners();
+            const { countMidlaners } = req.params;
+            const count = Number(countMidlaners);
+
+            if (!Number.isInteger(count) || count <= 0) {
+                res.status(400).json({ error: "El parámetro countMidlaners debe ser un número entero positivo" });
+                return;
+            }
+
+            const midlaners = await this.service.getAllMidlaners(count);
             res.json(midlaners);
         } catch (error) {
             console.error("Error al obtener los midlaners:", error);

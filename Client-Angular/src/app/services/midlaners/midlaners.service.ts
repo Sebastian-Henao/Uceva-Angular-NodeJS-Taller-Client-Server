@@ -12,11 +12,12 @@ export class MidlanersService {
   private httpClient = inject(HttpClient);
 
   /**
-   * Obtiene desde el servidor los campeones y sus estadísticas.
+   * Obtiene desde el servidor la cantidad de campeones solicitada.
    *
+   * @param countMidlaners Cantidad de midlaners a consultar.
    * @returns Observable con la lista de midlaners recibida desde la API.
    */
-  getAllMidlaners(): Observable<Midlaner[]> {
-    return this.httpClient.get<Midlaner[]>('api/midlaners');
+  getAllMidlaners(countMidlaners: number): Observable<Midlaner[]> {
+    return this.httpClient.get<Midlaner[]>(`api/midlaners/${countMidlaners}`);
   }
 }
