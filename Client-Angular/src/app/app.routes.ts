@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { UsersPage } from './pages/users/users.page';
 import { ProductsPage } from './pages/products/products.page';
 import { PersonajesPage } from './pages/personajes/personajes.page';
+import { MidlanersPage } from './pages/midlaners/midlaners.page';
 import { AppointmentsPage } from './pages/appointments/appointments.page';
 
 /**
@@ -40,7 +41,7 @@ export const routes: Routes = [
   { path: 'products', component: ProductsPage },
 
   {path: 'personajes', component: PersonajesPage},
-
+  { path: 'midlaners', component: MidlanersPage },
   { path: 'appointments', component: AppointmentsPage },
 
   /**

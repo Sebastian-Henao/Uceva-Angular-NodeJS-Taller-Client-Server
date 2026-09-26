@@ -117,6 +117,56 @@
  * @openapi
  * components:
  *   schemas:
+ *     Midlaner:
+ *       type: object
+ *       description: Representa un personaje de carril central (Midlaner) de League of Legends
+ *       required:
+ *         - id
+ *         - nombre
+ *         - titulo
+ *         - clase
+ *         - region
+ *         - dificultad
+ *         - winrate
+ *         - pickrate
+ *         - banrate
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         nombre:
+ *           type: string
+ *           example: Ahri
+ *         titulo:
+ *           type: string
+ *           example: La Raposa de Nueve Colas
+ *         clase:
+ *           type: string
+ *           example: Mago
+ *         region:
+ *           type: string
+ *           example: Jonia
+ *         dificultad:
+ *           type: string
+ *           example: Moderada
+ *         winrate:
+ *           type: number
+ *           format: float
+ *           example: 52.3
+ *         pickrate:
+ *           type: number
+ *           format: float
+ *           example: 12.1
+ *         banrate:
+ *           type: number
+ *           format: float
+ *           example: 5.4
+ */
+
+/**
+ * @openapi
+ * components:
+ *   schemas:
  *     Appointment:
  *       type: object
  *       description: Representa una cita médica del sistema
