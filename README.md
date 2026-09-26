@@ -53,6 +53,7 @@ Debemos poder observar una respuesta mediante un navegador web o el promagrama P
 
 - `http://localhost:3000/api/users`
 - `http://localhost:3000/api/products`
+- `http://localhost:3000/api/personajes`
 - `http://localhost:3000/api/appointments/10`
 
 La documentación técnica general del backend se encuentra en [Server-NodeJS/README.md](Server-NodeJS/README.md).
