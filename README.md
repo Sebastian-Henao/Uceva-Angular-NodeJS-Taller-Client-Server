@@ -53,6 +53,9 @@ Debemos poder observar una respuesta mediante un navegador web o el promagrama P
 
 - `http://localhost:3000/api/users`
 - `http://localhost:3000/api/products`
+- `http://localhost:3000/api/midlaners`
+
+La API de midlaners retorna los 20 campeones seleccionados para la línea central. Cada objeto incluye `id`, `nombre`, `titulo`, `clase`, `region` y `dificultad`; los campos `winrate`, `pickrate` y `banrate` son estadísticas variables generadas con faker.js. La definición interactiva del endpoint está disponible en Swagger.
 
 ## ▶️ Iniciar el Client (Client-Angular) en Modo Desarrollo
 
