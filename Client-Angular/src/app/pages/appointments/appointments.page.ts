@@ -14,10 +14,16 @@ import { AppointmentsService } from '../../services/appointments/appointments.se
   imports: [AppointmentsTableComponent, AlertComponent],
 })
 export class AppointmentsPage {
+  /** Citas cargadas desde la API para mostrarlas en la vista. */
   appointments: Appointment[] = [];
+
+  /** Estado actual del ciclo de carga de la página. */
   state: State = 'init';
+
+  /** Servicio de citas inyectado con Angular. */
   private readonly appointmentsService = inject(AppointmentsService);
 
+  /** Carga la lista inicial de citas al inicializar la página. */
   ngOnInit(): void {
     this.state = 'loading';
     this.appointmentsService.getAllAppointments(10).subscribe({

@@ -15,8 +15,10 @@ import {
   imports: [CommonModule, DatePipe, BadgeAtom],
 })
 export class AppointmentsTableComponent {
+  /** Lista de citas que se muestran en la tabla. */
   @Input() appointments: Appointment[] = [];
 
+  /** Mapeo del estado de la cita a un tipo de badge. */
   readonly statusMap: Record<AppointmentStatus, BadgeType> = {
     Pendiente: 'warning',
     Confirmada: 'success',

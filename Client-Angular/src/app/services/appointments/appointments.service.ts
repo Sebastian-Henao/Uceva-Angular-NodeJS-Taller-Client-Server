@@ -10,12 +10,14 @@ import { Appointment } from '../../interfaces/appointments.interface';
   providedIn: 'root',
 })
 export class AppointmentsService {
+  /** Cliente HTTP para consumir el backend de citas. */
   private readonly httpClient = inject(HttpClient);
 
   /**
    * Obtiene citas médicas generadas por el servidor.
    *
    * @param countAppointments Cantidad de citas solicitadas.
+   * @returns Observable con la lista de citas.
    */
   getAllAppointments(countAppointments: number): Observable<Appointment[]> {
     return this.httpClient.get<Appointment[]>(`api/appointments/${countAppointments}`);
