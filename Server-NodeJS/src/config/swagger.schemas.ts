@@ -163,4 +163,48 @@
  *           example: 5.4
  */
 
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Appointment:
+ *       type: object
+ *       description: Representa una cita médica del sistema
+ *       required:
+ *         - id
+ *         - patientName
+ *         - doctorName
+ *         - specialty
+ *         - scheduledAt
+ *         - status
+ *         - reason
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         patientName:
+ *           type: string
+ *           example: Ana Gómez
+ *         doctorName:
+ *           type: string
+ *           example: Carlos Pérez
+ *         specialty:
+ *           type: string
+ *           example: Cardiología
+ *         scheduledAt:
+ *           type: string
+ *           format: date-time
+ *           example: 2026-10-15T09:30:00.000Z
+ *         status:
+ *           type: string
+ *           enum:
+ *             - Pendiente
+ *             - Confirmada
+ *             - Cancelada
+ *           example: Confirmada
+ *         reason:
+ *           type: string
+ *           example: Control preventivo
+ */
+
 export {};
