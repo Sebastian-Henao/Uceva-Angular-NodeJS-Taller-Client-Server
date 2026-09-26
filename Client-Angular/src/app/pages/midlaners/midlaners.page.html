@@ -1,1 +1,11 @@
-<p>midlaners page works!</p>
+@switch (state) {
+  @case ('loading') {
+    <app-alert alertState="loading" text="Cargando campeones midlane..."></app-alert>
+  }
+  @case ('error') {
+    <app-alert alertState="error" text="Error al cargar los campeones midlane"></app-alert>
+  }
+  @case ('success') {
+    <app-midlaners-table [midlaners]="midlaners"></app-midlaners-table>
+  }
+}
