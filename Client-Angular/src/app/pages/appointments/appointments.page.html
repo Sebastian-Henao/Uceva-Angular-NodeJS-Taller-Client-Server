@@ -1,0 +1,13 @@
+@switch (state) {
+  @case ('loading') {
+    <app-alert alertState="loading" text="Cargando citas..." />
+  }
+
+  @case ('error') {
+    <app-alert alertState="error" text="Error al cargar las citas" />
+  }
+
+  @case ('success') {
+    <app-appointments-table [appointments]="appointments" />
+  }
+}

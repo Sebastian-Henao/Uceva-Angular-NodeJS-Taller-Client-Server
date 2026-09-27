@@ -1,0 +1,31 @@
+<table class="table table-striped border">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Paciente</th>
+      <th scope="col">Médico</th>
+      <th scope="col">Especialidad</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Motivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (appointment of appointments; track appointment.id) {
+      <tr>
+        <th scope="row">{{ appointment.id }}</th>
+        <td>{{ appointment.patientName }}</td>
+        <td>{{ appointment.doctorName }}</td>
+        <td>{{ appointment.specialty }}</td>
+        <td>{{ appointment.scheduledAt | date: 'short' }}</td>
+        <td>
+          <dsb-badge-atom
+            [text]="appointment.status"
+            [type]="statusMap[appointment.status]">
+          </dsb-badge-atom>
+        </td>
+        <td>{{ appointment.reason }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
